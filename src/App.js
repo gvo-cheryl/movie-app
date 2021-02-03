@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+function Potato({name, link}){
+  return <div>
+    <h1>{link}</h1>
+    <h3>I like {name}</h3>
+  </div>
+}
+
+const List = [{
+  name:"you",
+  add:"1"},
+  {
+    name:"dog",
+    add:"2"
+  },{
+    name:"cat",
+    add:"3"
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+     <h2>Hello!!!</h2>
+     {List.map(list => <Potato name={list.name} link={list.add}/>)}
+     </div>
   );
 }
 
